@@ -111,8 +111,11 @@ const Workout_exercise = sequelize.define('workout_exercises', {
   });
 
 Workout.hasMany(Workout_exercise, {foreignKey:'workout_id'});
-Workout_exercise.hasMany(Exercise, {foreignKey:'id'});
-// Exercise.belongsTo(Workout_exercise, {foreignKey:'exercise_id'})
+Workout_exercise.hasOne(Exercise,{foreignKey:'id', sourceKey:'exercise_id'});
+//Exercise.hasOne(Workout_exercise, {foreignKey:'exercise_id'});
+//Exercise.belongsTo(Workout_exercise, {foreignKey:'exercises_id'})
+// Exercise.hasMany(Workout_exercise, {foreignKey:'exercises_id'});
+//xercise.belongsToMany(Workout, {through: Workout_exercise, foreignKey:'id'})
 // Workout.belongsToMany(Exercise, {through: Workout_exercise, foreignKey: 'exercise_id'});
 // Exercise.belongsToMany(Workout, {through: Workout_exercise, foreignKey: 'workout_id'});
 

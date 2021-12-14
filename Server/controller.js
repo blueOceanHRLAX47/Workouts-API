@@ -6,16 +6,11 @@ module.exports = {
       include:
         {
           model:Workout_exercise,
-          attributes:['id', 'sets', 'reps'],
+          attributes:['id', 'exercise_id', 'sets', 'reps'],
           include: {
             model: Exercise,
           }
         },
-          // attributes: ['id','name','video'],
-          // through: {
-          //   as:'count',
-          //   attributes: ['id','sets','reps'],
-          // }
     })
     .then(results => {
       console.log('Successfully get all workouts');
