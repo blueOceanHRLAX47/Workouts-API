@@ -35,13 +35,13 @@ const Workout = sequelize.define('workouts', {
       type: DataTypes.STRING,
     },
     body_group: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.STRING,
     },
     description: {
       type: DataTypes.STRING,
     },
     equipment: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.STRING,
     }
   }, {
     timestamp: false,
@@ -88,6 +88,10 @@ const Exercise = sequelize.define('exercises', {
   });
 
 const Workout_exercise = sequelize.define('workout_exercises', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     workout_id: {
       type: DataTypes.INTEGER,
     },
@@ -106,10 +110,11 @@ const Workout_exercise = sequelize.define('workout_exercises', {
     updatedAt: false
   });
 
-// Workouts.hasMany(Workout_exercises, {foreignKey:'workout_id'});
-// Workout_exercises.belongsTo(Exercises, {foreignKey:'exercise_id'});
-Workout.belongsToMany(Exercise, {through: Workout_exercise, foreignKey: 'exercise_id'});
-Exercise.belongsToMany(Workout, {through: Workout_exercise, foreignKey: 'workout_id'});
+Workout.hasMany(Workout_exercise, {foreignKey:'workout_id'});
+Workout_exercise.hasMany(Exercise, {foreignKey:'id'});
+// Exercise.belongsTo(Workout_exercise, {foreignKey:'exercise_id'})
+// Workout.belongsToMany(Exercise, {through: Workout_exercise, foreignKey: 'exercise_id'});
+// Exercise.belongsToMany(Workout, {through: Workout_exercise, foreignKey: 'workout_id'});
 
 module.exports = {
   Workout,

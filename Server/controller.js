@@ -1,19 +1,21 @@
 const { Workout, Exercise, Saved_workout, Workout_exercise } = require('../Database/index.js');
 
 module.exports = {
-  getWorkouts:(req, res) => {
+  getAllWorkouts:(req, res) => {
     Workout.findAll({
-      include: [
+      include:
         {
-          model:Exercise,
-          as: 'exercises',
-          attributes: ["id","name", "video"],
-          through: {
-            as:'count',
-            attributes: ['sets','reps'],
+          model:Workout_exercise,
+          attributes:['id', 'sets', 'reps'],
+          include: {
+            model: Exercise,
           }
-        }
-      ]
+        },
+          // attributes: ['id','name','video'],
+          // through: {
+          //   as:'count',
+          //   attributes: ['id','sets','reps'],
+          // }
     })
     .then(results => {
       console.log('Successfully get all workouts');
