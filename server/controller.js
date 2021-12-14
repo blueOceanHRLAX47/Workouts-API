@@ -1,4 +1,4 @@
-const { Workout, Exercise, Saved_workout, Workout_exercise } = require('../Database/index.js');
+const { Workout, Exercise, Saved_workout, Workout_exercise } = require('../database/index.js');
 
 module.exports = {
   getAllWorkouts:(req, res) => {
