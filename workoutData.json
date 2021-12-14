@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "name": "Dumbbell Only Workout",
+      "type": "Strength",
+      "likes":55,
+      "duration": "45-60 min",
+      "level": "intermediate",
+      "body_group":[ "chest", "shoulder", "triceps"],
+      "description":"only requires dumbbells and is perfect for those looking to build lean muscle mass at home or on the go!",
+      "equipment": [ "Bodyweight", "Dumbbells"],
+      "exercises":[
+        {
+          "exercise": "Dumbell Bench Press",
+          "sets": 5,
+          "reps": "8-10",
+          "video": "https://youtu.be/dGqI0Z5ul4k"
+        },
+        {
+          "exercise": "Incline Dumbbell Bench Press",
+          "sets": 4,
+          "reps": "8-10",
+          "video": "https://youtu.be/8nNi8jbbUPE"
+        },
+        {
+          "exercise": "Dumbbell Floor Press",
+          "sets": 3,
+          "reps": "8-12",
+          "video": "https://youtu.be/gaBOfLlIXjs"
+        },
+        {
+          "exercise": "Standing Dumbbell Press",
+          "sets": 4,
+          "reps": "8-10",
+          "video": null
+        },
+        {
+          "exercise": "Dumbbell Lateral Raise",
+          "sets": 3,
+          "reps": "8-12",
+          "video": null
+        },
+        {
+          "exercise": "Dumbbell Tricep Kickback",
+          "sets": 3,
+          "reps": "8-12",
+          "video": "https://youtu.be/BL9CzOQZDrs"
+        }
+      ]
+    },
+    {
+      "name": "Core Destroyer: At Home Ab Workout",
+      "type": "Strength",
+      "likes": 72,
+      "duration": "10-20 min",
+      "level": "beginner",
+      "body_group":[ "abs", "core"],
+      "description":"Ab training should not be complicated. Add this twice-weekly workout to your routine to help build core strength and ab definition for the six pack of your dreams.",
+      "equipment": [ "Bodyweight", "Dumbbells"],
+      "exercises":[
+        {
+          "exercise": "Weighted Crunch",
+          "sets": 3,
+          "reps": "30 seconds",
+          "video": "https://youtu.be/6kHg3JAFNFo"
+        },
+        {
+          "exercise": "Rotating Mountain Climber",
+          "sets": 3,
+          "reps": "30 seconds",
+          "video":"https://youtu.be/5ZL0gFRjCTw"
+        },
+        {
+          "exercise": "Seated Twist",
+          "sets": 3,
+          "reps": "30 seconds",
+          "video": null
+        },
+        {
+          "exercise": "Lying Leg Raise",
+          "sets": 3,
+          "reps": "30 seconds",
+          "video": "https://youtu.be/r24ntO4IvKc"
+        },
+        {
+          "exercise": "Plank",
+          "sets": 3,
+          "reps": "60 seconds",
+          "video": null
+        }
+      ]
+    }
+  ]
+}
