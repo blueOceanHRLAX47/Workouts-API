@@ -9,7 +9,7 @@ const port = 3001;
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/api/workouts', router);
+app.use('/', router);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
