@@ -11,6 +11,7 @@ module.exports = {
             model: Exercise,
           }
         },
+      limit: 10
     })
     .then(results => {
       console.log('Successfully get all workouts');
