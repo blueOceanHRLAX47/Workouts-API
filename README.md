@@ -8,8 +8,6 @@
   localhost:3001/[endpoints]
   in database/index.js, change the host ip to public (line5)
 
-  NOTE: Making POST request to 'savedworkouts' endpoint for a user does not work in local server. User_id is required in the body, while it will be auto-generated and get passed after the user sign up in the deployed version.
-
 ## Endpoints:
 
 ### GET ('/')
@@ -19,7 +17,7 @@
   - return data example:
   ```
   [
-    {   // *workout 1*
+    {   // workout 1
         "id": 1,
         "name": "Dumbbell Only Workouts",
         "type": "Strength",
@@ -41,13 +39,13 @@
                 }
             },
             {
-                // *exercise 2*
+                //exercise 2
                 ...
             },...
         ]
     },
     {
-      // *workout 2*
+      //workout 2
     },...
   ]
   ```
@@ -56,14 +54,14 @@
 ### GET ('/savedworkouts')
 => get user's saved workouts list
   - params: null,
-  - body example: null *don't need a body for GET request in the deployed service*
-    *for testing*
+  - body example: null
     ```
-      body: {
-        user: {
-          id:3
-        }
+    //body is not required in the deployed product, but you can use this for testing.
+    body: {
+      user: {
+        id:3 //integer
       }
+    }
     ```
   - return data example: same as GET('/'), but only get the workouts saved by the users
 
@@ -75,11 +73,12 @@
   - body example:
     ```
     {
-      //  user: {
-      //    id:3 (*INT*)
-      //  }
-      workout_id: 5 (*INT*)
-      time_on_calendar: (*STRING*)
+      //user object is not required in the deployed product, but you can use this for testing.
+      user: {
+        id:3 //integer
+      }
+      workout_id: 5 //integer
+      time_on_calendar: //string
     }
     ```
 
