@@ -16,7 +16,8 @@
 => get first 10 workouts information
   - params: null,
   - body: null
-  - return data example: ==============================================
+  - return data example:
+  ```
   [
     {   // *workout 1*
         "id": 1,
@@ -49,20 +50,21 @@
       // *workout 2*
     },...
   ]
-  ===============================================================================
+  ```
 
 
 ### GET ('/savedworkouts')
 => get user's saved workouts list
   - params: null,
   - body example: null *don't need a body for GET request in the deployed service*
-    ===for testing===
+    *for testing*
+    ```
       body: {
         user: {
           id:3
         }
       }
-    =================
+    ```
   - return data example: same as GET('/'), but only get the workouts saved by the users
 
 
@@ -70,22 +72,24 @@
 ### POST ('/savedworkouts')
 => save a workout to calendar
   - params: null,
-  - body example: {
-      ===for testing===
-      user: {
-        id:3 (*INT*)
-      }
-      =================
+  - body example:
+    ```
+    {
+      //  user: {
+      //    id:3 (*INT*)
+      //  }
       workout_id: 5 (*INT*)
       time_on_calendar: (*STRING*)
     }
+    ```
 
 
 ### GET ('/oneworkout/:workout_id')
 => get a certain workout by given workout_id
   - params: workout_id,
   - body: null
-  - return data example: ==============================================
+  - return data example:
+  ```
     {
       "id": 1,
       "name": "Dumbbell Only Workouts",
@@ -113,7 +117,7 @@
           },...
       ]
     },
-  ===============================================================================
+  ```
 
 
 
