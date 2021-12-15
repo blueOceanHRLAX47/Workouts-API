@@ -17,7 +17,7 @@
   - return data example:
   ```
   [
-    {   // workout 1
+    {   //workout 1
         "id": 1,
         "name": "Dumbbell Only Workouts",
         "type": "Strength",
@@ -27,7 +27,7 @@
         "description": "only requires dumbbells and is perfect for those looking to build lean muscle mass at home or on the go!",
         "equipment": "bodyweight, dumbbells",
         "workout_exercises": [
-            {   // *exercise 1*
+            {   //exercise 1
                 "id": 1,
                 "exercise_id": 1,
                 "sets": 5,
@@ -45,7 +45,7 @@
         ]
     },
     {
-      //workout 2
+        //workout 2
     },...
   ]
   ```
@@ -57,10 +57,8 @@
   - body example: null
     ```
     //body is not required in the deployed product, but you can use this for testing.
-    body: {
-      user: {
-        id:3 //integer
-      }
+    user: {
+      id:3 //integer
     }
     ```
   - return data example: same as GET('/'), but only get the workouts saved by the users
@@ -78,7 +76,7 @@
         id:3 //integer
       }
       workout_id: 5 //integer
-      time_on_calendar: //string
+      time_on_calendar: "2021-12-13 18:30:00" //string
     }
     ```
 
@@ -99,7 +97,7 @@
       "description": "only requires dumbbells and is perfect for those looking to build lean muscle mass at home or on the go!",
       "equipment": "bodyweight, dumbbells",
       "workout_exercises": [
-          {   // *exercise 1*
+          {   //exercise 1
               "id": 1,
               "exercise_id": 1,
               "sets": 5,
@@ -111,7 +109,7 @@
               }
           },
           {
-              // *exercise 2*
+              //exercise 2
               ...
           },...
       ]
