@@ -14,7 +14,7 @@ module.exports = {
       limit: 10
     })
     .then(results => {
-      console.log('Successfully get all workouts');
+      //console.log('Successfully get all workouts');
       res.status(200).send(results);
     })
     .catch(err => {
@@ -23,8 +23,8 @@ module.exports = {
   },
 
   getSavedWorkouts: (req, res) => {
-    const user_id = req.params.user_id;
-    console.log('user id:', user_id);
+    const user_id = req.body.user.id;
+    //console.log('user id:', user_id);
 
     Saved_workout.findAll({
       where: {user_id: user_id},
@@ -40,7 +40,7 @@ module.exports = {
       }
     })
     .then(results => {
-      console.log('Successfully get user saved workouts');
+      //console.log('Successfully get user saved workouts');
       res.status(200).send(results);
     })
     .catch(err => {
@@ -50,7 +50,7 @@ module.exports = {
 
   getOneWorkout: (req, res) => {
     const workout_id = req.params.workout_id;
-    console.log('workout_id:', workout_id);
+    //console.log('workout_id:', workout_id);
     Workout.findByPk(workout_id, {
       include:
         {
@@ -63,7 +63,7 @@ module.exports = {
       limit: 10
     })
     .then(results => {
-      console.log('Successfully get one workout');
+      //console.log('Successfully get one workout');
       res.status(200).send(results);
     })
     .catch(err => {
@@ -72,14 +72,15 @@ module.exports = {
   },
 
   saveWorkout: (req, res) => {
-    const {user_id, workout_id, time_on_calendar} = req.body;
+    const {user, workout_id, time_on_calendar} = req.body;
+    // console.log('req.body', req.body);
     Saved_workout.create({
-      user_id: user_id,
+      user_id: user.id,
       workout_id: workout_id,
       time_on_calendar: time_on_calendar
     })
       .then(() => {
-        console.log('Successfully save a new workouts!');
+        //console.log('Successfully save a new workouts!');
         res.status(200).send('Successfully save a new workouts!');
       })
       .catch(err => {

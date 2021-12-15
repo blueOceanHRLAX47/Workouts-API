@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize('fbc', 'postgres', 'postgres', {
-  host: '10.49.144.4', // private
-  //host: '35.236.62.7', // public
+  //host: '10.49.144.4', // private
+  host: '35.236.62.7', // public
   dialect: 'postgres'
 });
 
@@ -51,15 +51,11 @@ const Workout = sequelize.define('workouts', {
   });
 
 const Saved_workout = sequelize.define('saved_workouts', {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     workout_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     time_on_calendar: {
       type: DataTypes.STRING,
