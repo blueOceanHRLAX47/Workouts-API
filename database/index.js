@@ -114,6 +114,10 @@ const Workout_exercise = sequelize.define('workout_exercises', {
 Workout.hasMany(Workout_exercise, {foreignKey:'workout_id'});
 Workout_exercise.hasOne(Exercise,{foreignKey:'id', sourceKey:'exercise_id'});
 
+// Workout.hasMany(Saved_workout, {foreign:'workout_id'});
+Saved_workout.hasOne(Workout, {foreignKey:'id', sourceKey:'workout_id'});
+
+
 module.exports = {
   Workout,
   Workout_exercise,
