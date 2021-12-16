@@ -51,6 +51,11 @@ const Workout = sequelize.define('workouts', {
   });
 
 const Saved_workout = sequelize.define('saved_workouts', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     user_id: {
       type: DataTypes.INTEGER,
     },

@@ -10,7 +10,7 @@
 
 ## Endpoints:
 
-### GET ('/')
+### 1. GET ('/')
 => get first 10 workouts information
   - params: null,
   - body: null
@@ -50,38 +50,7 @@
   ]
   ```
 
-
-### GET ('/savedworkouts')
-=> get user's saved workouts list
-  - params: null,
-  - body example: null
-    ```
-    //body is not required in the deployed product, but you can use this for testing.
-    user: {
-      id:3 //integer
-    }
-    ```
-  - return data example: same as GET('/'), but only get the workouts saved by the users
-
-
-
-### POST ('/savedworkouts')
-=> save a workout to calendar
-  - params: null,
-  - body example:
-    ```
-    {
-      //user object is not required in the deployed product, but you can use this for testing.
-      user: {
-        id:3 //integer
-      }
-      workout_id: 5 //integer
-      time_on_calendar: "2021-12-13 18:30:00" //string
-    }
-    ```
-
-
-### GET ('/oneworkout/:workout_id')
+### 2. GET ('/oneworkout/:workout_id')
 => get a certain workout by given workout_id
   - params: workout_id,
   - body: null
@@ -115,6 +84,64 @@
       ]
     },
   ```
+
+### 3. GET ('/savedworkouts')
+=> get user's saved workouts list
+  - params: null,
+  - body example:
+    ```
+    //body is not required in the deployed product, but you can use this for testing.
+    user: {
+      id:3 //integer
+    }
+    ```
+  - return data example: same as GET('/'), but only get the workouts saved by the users
+
+### 4. POST ('/savedworkouts')
+=> when user save a workout to calendar
+  - params: null,
+  - body example:
+    ```
+    //user object is not required in the deployed product, but you can use this for testing.
+    {
+      user: {
+        id:3 //integer
+      }
+      workout_id: 5 //integer
+      time_on_calendar: "2021-12-13 18:30:00" //string
+    }
+    ```
+### 5. PUT ('/savedworkouts')
+=> when user wants to update time on calendar for a certain saved workout.
+  - params: null,
+  - body example:
+    ```
+    // NOTE:savedWorkout_id is the same as the id from GET ('/savedworkouts'), not workout_id
+    // user object is not required in the deployed product, but you can use this for testing.
+    {
+      user: {
+        id:3 //integer
+      }
+      savedWorkout_id: 15 //integer,
+      time_on_calendar: "2021-12-13 14:30:00" //string,
+    }
+    ```
+
+### 5. DELETE ('/savedworkouts')
+=> when user wants to delete a certain saved workout.
+  - params: null,
+  - body example:
+    ```
+    // NOTE:savedWorkout_id is the same as the id from GET ('/savedworkouts'), not workout_id
+    // user object is not required in the deployed product, but you can use this for testing.
+    {
+      user: {
+        id:3 //integer
+      }
+      savedWorkout_id: 15 //integer,
+    }
+    ```
+
 
 
 
